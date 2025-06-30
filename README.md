@@ -1,7 +1,7 @@
 ## BACKEND
 
 ```bash
-create "type_test" in pgAdmin4
+create database "type_test" in postgresql
 ```
 ```bash
 change .env in "back" folder
