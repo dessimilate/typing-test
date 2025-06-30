@@ -1,6 +1,11 @@
 ## BACKEND
 
+```bash
 create "type_test" in pgAdmin4
+```
+```bash
+change .env in "back" folder
+```
 
 ```bash
 yarn install
