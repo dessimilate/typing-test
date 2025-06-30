@@ -3,11 +3,15 @@
 create "type_test" in pgAdmin4
 
 ```bash
-yarn prisma db push
-```
-```bash
 yarn install
 ```
+```bash
+yarn prisma db push
+# or
+yarn global add prisma
+prisma db push
+```
+
 ```bash
 yarn dev
 # or
