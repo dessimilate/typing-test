@@ -1,0 +1,9 @@
+.main {
+	> .sidebar {
+		@apply flex h-24 px-24 justify-between;
+	}
+
+	> .content {
+		@apply min-h-[calc(100vh-6rem)] relative;
+	}
+}

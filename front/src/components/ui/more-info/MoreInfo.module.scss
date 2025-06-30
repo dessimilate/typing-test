@@ -1,0 +1,30 @@
+.main {
+	@apply relative inline-block;
+
+	> .info {
+		@apply absolute bottom-full text-nowrap;
+
+		left: 50%;
+		transform: translateX(-50%);
+
+		> div {
+			@apply hidden bg-dark-bg px-2 rounded-sm text-white;
+
+			&.enter {
+				@apply animate-up block;
+			}
+
+			&.enter-done {
+				@apply block;
+			}
+
+			&.exit {
+				@apply animate-down block;
+			}
+
+			&.exit-done {
+				@apply hidden;
+			}
+		}
+	}
+}

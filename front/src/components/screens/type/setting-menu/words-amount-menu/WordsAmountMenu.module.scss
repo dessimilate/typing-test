@@ -1,0 +1,23 @@
+.setting-element {
+	@apply block-with-padding-mini flex gap-3 px-4;
+
+	> button {
+		@apply flex justify-center items-center text-inactive transition-colors text-xs;
+
+		&.active {
+			@apply text-yellow-300;
+		}
+
+		> svg {
+			@apply w-4 h-4 mr-1;
+		}
+
+		&:hover {
+			@apply text-white;
+
+			> svg {
+				@apply text-white transition-colors;
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+.settings {
+	@apply flex gap-3 mb-40;
+
+	> .skeleton {
+		@apply h-[37px] w-[570px] bg-block rounded-[.7rem];
+	}
+}

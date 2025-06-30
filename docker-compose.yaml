@@ -1,0 +1,50 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: postgres-typing-test
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_PORT: ${DB_PORT}
+    restart: on-failure
+    ports:
+      - '5432:${DB_PORT}'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+
+  back:
+    build:
+      context: ./back
+    container_name: back-typing-test
+    restart: on-failure
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./back:/app
+    depends_on:
+      - db
+
+  front:
+    build:
+      context: ./front
+    container_name: front-typing-test
+    restart: on-failure
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./front:/app
+      - ./dataset:/docker-entrypoint-initdb.d
+    depends_on:
+      - back
+
+volumes:
+  postgres-data:

@@ -1,0 +1,54 @@
+.leaderboard {
+	// @apply w-full;
+	> .list {
+		@apply flex flex-col justify-center items-center;
+
+		> .row {
+			@apply w-[80%] py-2 px-4 flex justify-between items-center rounded-lg;
+
+			&.dark {
+				@apply bg-light-dark;
+			}
+
+			> .row-left {
+				@apply flex gap-4 items-center;
+
+				> .row-number {
+					@apply h-5 w-5 flex justify-center items-center;
+
+					> svg {
+						@apply h-5 w-5;
+					}
+				}
+
+				> .row-name {
+					@apply flex gap-2;
+
+					> .you {
+						@apply text-inactive;
+					}
+				}
+			}
+
+			> .row-right {
+				@apply flex gap-8;
+
+				> div {
+					@apply flex flex-col;
+
+					& > :last-child {
+						@apply text-inactive leading-3 mb-2;
+					}
+				}
+
+				> .stats {
+					@apply items-center;
+				}
+
+				> .date {
+					@apply items-end;
+				}
+			}
+		}
+	}
+}

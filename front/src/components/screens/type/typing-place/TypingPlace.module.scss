@@ -1,0 +1,63 @@
+.typing-place {
+	@apply flex flex-col justify-center items-center animate-in;
+
+	> div {
+		@apply inline-block relative;
+
+		> .counter {
+			@apply text-yellow-300 text-2xl hidden animate-fadeIn absolute bottom-full left-0;
+
+			&.active {
+				@apply block;
+			}
+		}
+
+		> .words-wrapper {
+			@apply overflow-hidden;
+
+			> .words {
+				@apply w-[1000px] mb-10 relative text-3xl animate-fadeIn overflow-hidden flex flex-wrap items-start;
+
+				> .word {
+					// @apply flex items-start;
+
+					> .inactive {
+						@apply text-inactive;
+					}
+
+					> .correct {
+						@apply text-white;
+					}
+
+					> .wrong {
+						@apply text-red-400;
+					}
+				}
+
+				> .caret {
+					@apply h-full bg-yellow-300 w-[3px] absolute rounded-full animate-caret-pulse top-[6px];
+
+					animation-duration: 1s;
+
+					transition: left top 1s ease;
+				}
+			}
+		}
+	}
+
+	> svg {
+		@apply text-inactive;
+
+		transition-property: color, transform;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 266ms;
+
+		&:hover {
+			@apply text-white rotate-[30deg];
+		}
+	}
+}
+
+.progressbar {
+	@apply w-[60%];
+}

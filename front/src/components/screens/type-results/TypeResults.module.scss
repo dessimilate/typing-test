@@ -1,0 +1,65 @@
+.results {
+	@apply w-full h-full flex flex-col justify-start items-center absolute;
+
+	> .wrapper {
+		@apply h-full w-[80%] flex flex-col justify-center;
+
+		> .important-info {
+			@apply grid grid-cols-3 mb-10;
+
+			> .stat {
+				@apply text-inactive flex flex-col cursor-default justify-center items-center text-2xl;
+
+				> span {
+					@apply relative;
+
+					> .crown {
+						@apply absolute left-full top-1/2 -translate-y-1/2 text-[#000] bg-yellow-400 rounded-lg ml-2 h-6 w-6 p-1;
+					}
+				}
+
+				> div > span {
+					@apply text-yellow-400 text-5xl leading-10;
+				}
+
+				> .skeleton {
+					@apply w-24 h-[44.69px] my-[4px] bg-inactive;
+				}
+			}
+
+			> .graphic {
+				@apply block-with-padding;
+
+				grid-column: 2 / 4;
+			}
+		}
+
+		> .stats {
+			@apply grid grid-cols-3 mb-10;
+
+			> .stat {
+				@apply text-inactive flex flex-col cursor-default justify-center items-center;
+
+				span {
+					@apply text-yellow-400 text-xl leading-6;
+				}
+
+				> .skeleton {
+					@apply w-16 h-[22.31px] my-[3px] bg-inactive;
+				}
+			}
+		}
+
+		> .buttons {
+			@apply flex gap-10 justify-center items-center;
+
+			svg {
+				@apply text-inactive transition-colors;
+
+				&:hover {
+					@apply text-white;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,61 @@
+.profile {
+	@apply flex flex-col justify-center items-center;
+
+	> .user {
+		@apply w-[80%] flex gap-5;
+
+		// grid-template-columns: min(1fr) max(3fr);
+
+		> .userinfo {
+			@apply flex flex-col block-with-padding;
+
+			> div {
+				@apply w-full h-full flex flex-col;
+
+				> .username {
+					@apply text-[30px] flex items-center;
+
+					> form {
+						@apply flex items-center;
+
+						> .username-field {
+							@apply w-72;
+						}
+					}
+
+					> svg,
+					> form > button > svg {
+						@apply ml-4 text-inactive hover:text-white transition-colors;
+					}
+				}
+
+				> .username-skeleton {
+					@apply h-[29px] w-[170px] my-[8px] bg-inactive;
+				}
+
+				> .create-date {
+					@apply text-inactive text-[14px] truncate transition-opacity;
+				}
+
+				> .create-date-skeleton {
+					@apply h-[15px] w-[150px] my-[3px] bg-inactive;
+				}
+			}
+		}
+
+		> .user-stats {
+			@apply flex gap-10 justify-around block-with-padding grow;
+
+			> .stat {
+				@apply flex flex-col items-center;
+				> span {
+					@apply text-inactive text-xs;
+				}
+
+				> div {
+					@apply text-[2rem] leading-[1.5rem];
+				}
+			}
+		}
+	}
+}

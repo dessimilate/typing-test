@@ -1,0 +1,67 @@
+.field {
+	@apply flex items-center relative;
+
+	&::before {
+		@apply w-full h-[1px] absolute bg-inactive top-full transition-colors;
+
+		content: '';
+	}
+
+	&.error::before {
+		@apply bg-red-800;
+	}
+
+	&.warning::before {
+		@apply bg-yellow-400;
+	}
+
+	> span {
+		> svg {
+			@apply text-inactive text-sm mr-1 mt-1 transition-colors;
+		}
+
+		&.error {
+			> svg {
+				@apply text-red-800;
+			}
+		}
+
+		&.warning {
+			> svg {
+				@apply text-yellow-400;
+			}
+		}
+	}
+
+	> input {
+		@apply border-none outline-none placeholder:text-inactive text-inactive bg-transparent transition-colors w-full;
+	}
+
+	&:focus-within {
+		> span {
+			> svg {
+				@apply text-white;
+			}
+		}
+
+		> input {
+			@apply text-white;
+		}
+
+		&::before {
+			@apply bg-white;
+		}
+	}
+
+	> div {
+		@apply absolute text-xs top-[calc(100%+1px)] left-5;
+
+		&.error {
+			@apply text-red-800;
+		}
+
+		&.warning {
+			@apply text-yellow-400;
+		}
+	}
+}

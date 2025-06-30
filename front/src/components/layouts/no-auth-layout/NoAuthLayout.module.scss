@@ -1,0 +1,38 @@
+.main {
+	> .sidebar {
+		@apply flex h-24 px-24 justify-between items-center;
+
+		> a {
+			> .logo {
+				@apply flex items-center;
+
+				> svg {
+					@apply text-inactive mr-1 transition-colors;
+				}
+
+				> div {
+					@apply text-inactive text-2xl mb-[2px] font-medium transition-colors;
+				}
+
+				&:hover {
+					> svg,
+					div {
+						@apply text-white;
+					}
+				}
+			}
+
+			> svg {
+				@apply text-inactive transition-colors;
+			}
+
+			> svg:hover {
+				@apply text-white;
+			}
+		}
+	}
+
+	> .content {
+		@apply min-h-[calc(100vh-6rem)];
+	}
+}

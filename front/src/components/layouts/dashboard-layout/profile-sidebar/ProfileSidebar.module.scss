@@ -1,0 +1,30 @@
+.sidebar {
+	@apply flex gap-7 items-center;
+
+	.profile {
+		@apply flex items-center;
+
+		> div {
+			@apply text-inactive font-medium mb-1 transition-colors max-w-[125px] truncate animate-fadeIn;
+		}
+
+		> svg {
+			@apply mr-1 text-inactive transition-colors;
+		}
+
+		&:hover {
+			> svg,
+			div {
+				@apply text-white;
+			}
+		}
+	}
+
+	> svg {
+		@apply text-inactive transition-colors;
+	}
+
+	> svg:hover {
+		@apply text-white;
+	}
+}

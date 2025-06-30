@@ -1,0 +1,27 @@
+.main {
+	@apply flex flex-col justify-center items-center min-h-screen;
+
+	> h1 {
+		@apply mb-2 text-2xl;
+	}
+
+	> .form {
+		@apply w-1/4  shadow bg-bg rounded-xl p-layout;
+
+		> .field {
+			@apply mb-7;
+		}
+
+		> .buttons {
+			@apply flex flex-col items-center gap-5 justify-center;
+
+			> .submit-button {
+				@apply w-full;
+			}
+
+			> .link-button {
+				@apply w-full text-[.8rem] -mt-6 duration-200;
+			}
+		}
+	}
+}
