@@ -4,7 +4,7 @@
 create database "type_test" in postgresql
 ```
 ```bash
-change .env in "back" folder
+change DATABASE_URL in .env in "back" folder
 ```
 
 ```bash
