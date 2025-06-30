@@ -76,7 +76,9 @@ const Auth: NextComponentType<IAuthProps> = ({ type }) => {
 
 	return (
 		<div className={style.main}>
-			<h1>Add an account</h1>
+			<h1>
+				{type === 'Login' ? 'Login to your account' : 'Create an account'}
+			</h1>
 
 			<form
 				className={style.form}
